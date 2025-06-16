@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{054826C2-B320-4544-956B-F122AAE134C7}|Presentacion\\Presentacion.csproj|c:\\users\\logan\\desktop\\autopartes\\autopartes\\presentacion\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{054826C2-B320-4544-956B-F122AAE134C7}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7EA7EF5-B002-4821-9096-8E0824633C9C}|Negocio\\Negocio.csproj|c:\\users\\logan\\desktop\\autopartes\\autopartes\\negocio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7EA7EF5-B002-4821-9096-8E0824633C9C}|Negocio\\Negocio.csproj|solutionrelative:negocio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B12BA86B-C65B-42D6-8B55-56DAEB87CBF0}|Entidad\\Entidad.csproj|c:\\users\\logan\\desktop\\autopartes\\autopartes\\entidad\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B12BA86B-C65B-42D6-8B55-56DAEB87CBF0}|Entidad\\Entidad.csproj|solutionrelative:entidad\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9215098A-AE74-4F5B-9F22-AC941725ECAB}|Datos\\Datos.csproj|c:\\users\\logan\\desktop\\autopartes\\autopartes\\datos\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9215098A-AE74-4F5B-9F22-AC941725ECAB}|Datos\\Datos.csproj|solutionrelative:datos\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Presentacion\\Form1.cs",
+              "RelativeDocumentMoniker": "Presentacion\\Form1.cs",
+              "ToolTip": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Presentacion\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T00:51:30.043Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Negocio\\Class1.cs",
+              "RelativeDocumentMoniker": "Negocio\\Class1.cs",
+              "ToolTip": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Negocio\\Class1.cs",
+              "RelativeToolTip": "Negocio\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T00:50:46.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Entidad\\Class1.cs",
+              "RelativeDocumentMoniker": "Entidad\\Class1.cs",
+              "ToolTip": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Entidad\\Class1.cs",
+              "RelativeToolTip": "Entidad\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T00:50:26.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Datos\\Class1.cs",
+              "RelativeDocumentMoniker": "Datos\\Class1.cs",
+              "ToolTip": "C:\\Users\\Logan\\Desktop\\AutoPartes\\AutoPartes\\Datos\\Class1.cs",
+              "RelativeToolTip": "Datos\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-16T00:49:23.823Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
