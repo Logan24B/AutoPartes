@@ -1,0 +1,9 @@
+# Ignorar carpetas de Visual Studio y archivos temporales
+
+.vs/
+*.db-shm
+*.db-wal
+FileContentIndex/
+obj/
+bin/
+*.user
