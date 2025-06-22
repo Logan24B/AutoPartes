@@ -37,6 +37,7 @@ namespace Datos
         /// <summary>
         /// Cierra la conexión si está abierta.
         /// </summary>
+        // Este metodo realmente no es utilizado en la capa de negocio, pero es una buena práctica tenerlo
         public void CerrarConexion(SqlConnection conexion)
         {
             // Verificamos si la conexión está abierta antes de intentar cerrarla

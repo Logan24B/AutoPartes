@@ -13,13 +13,13 @@ namespace Negocio
         // Aquí puedes implementar la lógica de negocio relacionada con los proveedores.
         // Por ejemplo, podrías tener métodos para agregar, actualizar, eliminar o buscar proveedores.
         // Ejemplo de método para agregar un proveedor
-        public void AgregarProveedor(Entidad.EProveedor proveedor)
+        public void AgregarProveedor(EProveedor proveedor)
         {
             Datos.ProveedoresBD proveedoresBD = new Datos.ProveedoresBD();
             proveedoresBD.Insertar(proveedor);
         }
         // Ejemplo de método para obtener todos los proveedores
-        public List<Entidad.EProveedor> ObtenerProveedores()
+        public List<EProveedor> ObtenerProveedores()
         {
             try // Intentamos obtener la lista de proveedores
             {

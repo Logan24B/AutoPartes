@@ -171,11 +171,13 @@ namespace Datos
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) // Capturamos cualquier excepción que ocurra al intentar eliminar el proveedor
             {
                 throw new Exception("Error al eliminar proveedor: " + ex.Message);
             }
         }
+
+        
 
 
 

@@ -247,6 +247,15 @@ namespace Presentacion
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Cierra el formulario actual
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos(); // Limpia todos los campos del formulario
+        }
     }
 }
 

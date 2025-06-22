@@ -53,10 +53,12 @@ namespace Presentacion
         {
             
         }
-       
 
+        private void BtnCliente_Click(object sender, EventArgs e) // ← Botón para abrir el formulario de Cliente
+        {
+            AbrirFormularioEnPanel(new FCliente());
+        }
 
-
-
+        
     }
 }
