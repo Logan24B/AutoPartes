@@ -104,7 +104,6 @@ namespace Presentacion
             ChkStatus.Checked = true;
         }
 
-
         private void CmbCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -145,7 +144,6 @@ namespace Presentacion
                     TxtUrl.Text = proveedor.SitioWeb;
                     CmbCountry.SelectedValue = proveedor.PaisId;
                     ChkStatus.Checked = proveedor.Estado;
-                    // Opcional: podrías guardar la fecha original en un campo oculto si querés conservarla en el update
                 }
                 else
                 {
@@ -258,4 +256,3 @@ namespace Presentacion
         }
     }
 }
-
