@@ -16,25 +16,43 @@ namespace Presentacion
 {
     public partial class FProveedor : Form
     {
-        private NProveedor nProveedor = new NProveedor(); // Instancia de la capa de negocio para proveedores
-        private NPais paisNegocio = new NPais(); // instancia de la capa negocio
-
         public FProveedor()
         {
             InitializeComponent();
             CargarProveedores(); // Llamamos al método para cargar los proveedores al iniciar el formulario
             CargarPaises(); // Llamamos al método para cargar los países al iniciar el formulario
         }
+
+        BindingSource proveedorBinding = new BindingSource();
+        private List<EProveedor> listaOriginal = new List<EProveedor>();
+
+
         private void CargarProveedores()
         {
             try
             {
-                List<EProveedor> listaProveedores = nProveedor.ObtenerProveedores(); // Obtenemos la lista de proveedores desde la capa de negocio
-                DtgProveedor.DataSource = listaProveedores; // Asignamos la lista al DataGridView
+                listaOriginal = nProveedor.ObtenerProveedores(); // Carga una sola vez
+                DtgProveedor.DataSource = listaOriginal; // Muestra todo
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los proveedores: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private NProveedor nProveedor = new NProveedor(); // Instancia de la capa de negocio para proveedores
+        private NPais paisNegocio = new NPais(); // instancia de la capa negocio
+
+        private void CargarProveedoresInactivos()
+        {
+            try
+            {
+                List<EProveedor> proveedoresInactivos = nProveedor.ObtenerProveedoresInactivos();
+                DtgProveedor.DataSource = proveedoresInactivos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los proveedores inactivos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -45,7 +63,7 @@ namespace Presentacion
 
         private void DtgProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -104,6 +122,7 @@ namespace Presentacion
             ChkStatus.Checked = true;
         }
 
+
         private void CmbCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -144,6 +163,7 @@ namespace Presentacion
                     TxtUrl.Text = proveedor.SitioWeb;
                     CmbCountry.SelectedValue = proveedor.PaisId;
                     ChkStatus.Checked = proveedor.Estado;
+                    // Opcional: podrías guardar la fecha original en un campo oculto si querés conservarla en el update
                 }
                 else
                 {
@@ -254,5 +274,57 @@ namespace Presentacion
         {
             LimpiarCampos(); // Limpia todos los campos del formulario
         }
+
+        // Evento para manejar el cambio de texto en el campo de búsqueda
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string texto = TxtBuscar.Text.Trim().ToLower();
+
+            // Asegurarse de que listaOriginal y los inactivos están correctamente cargados
+            List<EProveedor> listaInactivos = new List<EProveedor>();
+
+            try
+            {
+                listaInactivos = nProveedor.ObtenerProveedoresInactivos(); // Este método debe existir en la capa Negocio
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener proveedores inactivos: " + ex.Message);
+                return;
+            }
+
+            // Combinar activos e inactivos
+            var listaCombinada = listaOriginal.Concat(listaInactivos).ToList();
+
+            // Aplicar filtro por nombre
+            var filtrada = listaCombinada
+                .Where(p => p.Nombre.ToLower().Contains(texto))
+                .ToList();
+
+            DtgProveedor.DataSource = filtrada;
+        }
+
+        private void DtgProveedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Verifica que no sea encabezado
+            {
+                DataGridViewRow fila = DtgProveedor.Rows[e.RowIndex];
+
+                // Rellenamos los campos con los datos seleccionados
+                TxtCode.Text = fila.Cells["Id"].Value.ToString();
+                TxtName.Text = fila.Cells["Nombre"].Value.ToString();
+                TxtPhone.Text = fila.Cells["Telefono"].Value.ToString();
+                TxtEmail.Text = fila.Cells["Email"].Value.ToString();
+                TxtUrl.Text = fila.Cells["SitioWeb"].Value.ToString();
+                CmbCountry.SelectedValue = Convert.ToInt32(fila.Cells["PaisId"].Value);
+                ChkStatus.Checked = Convert.ToBoolean(fila.Cells["Estado"].Value);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CargarProveedoresInactivos(); // Carga solo los proveedores inactivos al DataGridView
+        }
     }
 }
+

@@ -88,6 +88,32 @@ namespace Datos
             return proveedores;
         }
 
+        // Metodo para obtener todos los proveedores inactivos de la base de datos
+        public List<EProveedor> ObtenerInactivos()
+        {
+            List<EProveedor> proveedores = new List<EProveedor>();
+            using (SqlConnection con = conexionBD.ObtenerConexion())
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Proveedor WHERE Estado = 0", con); // 🔍 Solo inactivos
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    EProveedor proveedor = new EProveedor(
+                        reader.GetInt32(0),         // Id
+                        reader.GetString(1),        // Nombre
+                        reader.GetInt32(2),         // PaisId
+                        reader.GetString(3),        // Telefono
+                        reader.GetString(4),        // Email
+                        reader.GetString(5),        // SitioWeb
+                        reader.GetDateTime(6),      // FechaRegistro
+                        reader.GetBoolean(7)        // Estado
+                    );
+                    proveedores.Add(proveedor);
+                }
+            }
+            return proveedores;
+        }
+
         public EProveedor ObtenerPorId(int id)
         {
             using (SqlConnection con = conexionBD.ObtenerConexion())

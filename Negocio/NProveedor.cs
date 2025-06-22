@@ -58,6 +58,20 @@ namespace Negocio
         {
             return new ProveedoresBD().Eliminar(id);
         }
+        // Metodo para obtener proveedores inactivos
+        public List<EProveedor> ObtenerProveedoresInactivos()
+        {
+            try // Intentamos obtener la lista de proveedores inactivos
+            {
+                Datos.ProveedoresBD proveedoresBD = new Datos.ProveedoresBD(); // Creamos una instancia de la clase ProveedoresBD para acceder a los datos
+                return proveedoresBD.ObtenerInactivos(); // Llamamos al método ObtenerProveedoresInactivos para obtener la lista de proveedores inactivos
+            }
+            catch (Exception ex) // Capturamos cualquier excepción que pueda ocurrir al obtener los proveedores inactivos
+            {
+                // Manejo de excepciones para capturar errores al obtener proveedores inactivos
+                throw new Exception("Error al obtener proveedores inactivos.: " + ex.Message);
+            }
+        }
 
 
 
